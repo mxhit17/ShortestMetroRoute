@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.PriorityQueue;
 import java.util.Queue;
+import java.util.Scanner;
 
 public class Index{
     static class Edge {
@@ -167,9 +168,11 @@ public class Index{
         // for(int i = 0; i < path.length; i++){
         //     System.out.println(path[i] + "      ->  " + dist[i]);
         // }
-        System.out.println("Distance : " + dist[dest]);
+        System.out.println("-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-Distance : " + dist[dest] + "-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-");
+        System.out.println();
         double time = dist[dest] / (double)45;
-        System.out.println("Time : " + time + " Hour(s)");
+        System.out.println("-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-Time : " + time + " Hour(s)-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-");
+        System.out.println();
         printPath(path[dest], stationName);
     }
 
@@ -188,14 +191,14 @@ public class Index{
             }
         }
 
-        System.out.print("Path : ");
+        System.out.print("-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-Path : ");
         
         for(int i = 0; i < p.size(); i++){
             String t = p.get(i);
             int idx = Integer.parseInt(t);
             System.out.print(stationName[idx] + " -> ");
         }
-        System.out.print("Dest");
+        System.out.print("Dest-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-");
     }
 
     public static void main(String[] args) {
@@ -206,9 +209,25 @@ public class Index{
         ArrayList<Edge>[] graph = new ArrayList[V];
         createGraph(graph);
 
-        // bfs(graph);
         int src = 0;
-        int dest = 10;
+        int dest = 1;
+
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Please enter your location(source) : ");
+        String s = sc.nextLine();
+        // System.out.println();
+        System.out.print("Please enter your destination : ");
+        String d = sc.nextLine();
+
+        for(int i = 0; i < stationName.length; i++){
+            if(s.equals(stationName[i])){
+                src = i;
+            }
+            if(d.equals(stationName[i])){
+                dest = i;
+            }
+        }
+
         dijkstraPath(graph, src, dest, stationName);
     }
 }
