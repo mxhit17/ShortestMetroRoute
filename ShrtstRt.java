@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.PriorityQueue;
 import java.util.Scanner;
 
-public class Index{
+public class ShrtstRt{
     static class Edge {
         int src;
         int dest;
