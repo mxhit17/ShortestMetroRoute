@@ -206,8 +206,8 @@ public class ShrtstRt{
         ArrayList<Edge>[] graph = new ArrayList[V];
         createGraph(graph);
 
-        int src = 12;
-        int dest = 7;
+        int src = 0;
+        int dest = 1;
 
         Scanner sc = new Scanner(System.in);
         System.out.print("Please enter your location(source) : ");
