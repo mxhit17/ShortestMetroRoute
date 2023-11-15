@@ -136,7 +136,7 @@ public class ShrtstRt{
         for(int i = 0; i < dist.length; i++){
             if(i == src){
                 dist[i] = 0;
-                path[i] = "0";
+                path[i] = String.valueOf(src);
             }else{
                 dist[i] = Integer.MAX_VALUE;
                 path[i] = "";
@@ -163,11 +163,11 @@ public class ShrtstRt{
             }
         }
 
-        System.out.println("-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-Distance : " + dist[dest] + "-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-");
+        System.out.println("-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x- Distance : " + dist[dest] + " -x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-");
         System.out.println();
 
         double time = dist[dest] / (double)45;
-        System.out.println("-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-Time : " + time + " Hour(s)-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-");
+        System.out.println("-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x- Time : " + time + " Hour(s) -x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-");
         System.out.println();
         
         printPath(path[dest], stationName);
@@ -206,8 +206,8 @@ public class ShrtstRt{
         ArrayList<Edge>[] graph = new ArrayList[V];
         createGraph(graph);
 
-        int src = 0;
-        int dest = 1;
+        int src = 12;
+        int dest = 7;
 
         Scanner sc = new Scanner(System.in);
         System.out.print("Please enter your location(source) : ");
