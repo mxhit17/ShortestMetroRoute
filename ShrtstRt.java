@@ -128,7 +128,7 @@ public class ShrtstRt{
         }
     }
 
-    public static void dijkstraPath(ArrayList<Edge> graph[], int src, int dest, String[] stationName){
+    public static void shrtstPth(ArrayList<Edge> graph[], int src, int dest, String[] stationName){
         boolean vis[] = new boolean[graph.length];
         int dist[] = new int[graph.length];
         String path[] = new String[graph.length];
@@ -163,14 +163,13 @@ public class ShrtstRt{
             }
         }
 
-        // for(int i = 0; i < path.length; i++){
-        //     System.out.println(path[i] + "      ->  " + dist[i]);
-        // }
         System.out.println("-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-Distance : " + dist[dest] + "-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-");
         System.out.println();
+
         double time = dist[dest] / (double)45;
         System.out.println("-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-Time : " + time + " Hour(s)-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-");
         System.out.println();
+        
         printPath(path[dest], stationName);
     }
 
@@ -226,6 +225,6 @@ public class ShrtstRt{
             }
         }
 
-        dijkstraPath(graph, src, dest, stationName);
+        shrtstPth(graph, src, dest, stationName);
     }
 }
